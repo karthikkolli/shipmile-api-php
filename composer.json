@@ -1,9 +1,10 @@
 {
     "name": "shipmile/shipmile-api",
     "description": "API library for PHP",
+    "license" : "MIT",
     "type": "library",
     "require-dev": {
-        "phpunit/phpunit": "~4.8@dev"
+        "phpunit/phpunit": "~4.0"
     },
     "authors": [
         {
@@ -12,5 +13,13 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "ext-json" : "*",
+        "guzzle/guzzle" : "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { 
+            "Shipmile\\" : "lib/"
+        } 
+    }
 }
