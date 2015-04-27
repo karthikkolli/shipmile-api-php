@@ -38,10 +38,10 @@ class HttpClient
         if(!array_key_exists('mode', $this->options['mode'])) {
             $mode = 'prod';
         } else {
-            $mode = $this->options['mode']
+            $mode = $this->options['mode'];
         }
 
-        $base_url = ($mode == 'prod')? $this->options['base_prod'] : $this->options['base_test'] 
+        $base_url = ($mode == 'prod')? $this->options['base_prod'] : $this->options['base_test'];
 
         $this->headers = array(
             'user-agent' => $this->options['user_agent'],
