@@ -1,5 +1,6 @@
 {
     "name": "shipmile/shipmile-api",
+    "version" : "0.1.0",
     "description": "API library for PHP",
     "license" : "MIT",
     "type": "library",
