@@ -19,7 +19,7 @@ class HttpClient
 {
     protected $options = array(
         'base_prod'    => 'https://api.shipmile.com',
-        'base_test'    => 'https://api.shipmile.com',
+        'base_test'    => 'https://test.shipmile.com',
         'api_version' => 'v1',
         'user_agent' => 'shipmile-php/0.1.1'
     );
