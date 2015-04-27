@@ -35,7 +35,7 @@ class HttpClient
 
         $this->options = array_merge($this->options, $options);
 
-        if(!array_key_exists('mode', $this->options['mode'])) {
+        if(!array_key_exists('mode', $this->options)) {
             $mode = 'prod';
         } else {
             $mode = $this->options['mode'];
