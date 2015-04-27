@@ -95,9 +95,7 @@ class AuthHandler
      */
     public function urlToken(Event $event)
     {
-        $query = $event['request']->getQuery();
-
-        $query->set('access_token', $this->auth['access_token']);
+        $event['request']->setHeader('X-SM-TOKEN', $this->auth['access_token']);
     }
 
 }

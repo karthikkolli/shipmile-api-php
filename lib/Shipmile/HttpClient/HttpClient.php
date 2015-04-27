@@ -18,9 +18,9 @@ use Shipmile\HttpClient\ResponseHandler;
 class HttpClient
 {
     protected $options = array(
-        'base'    => 'https://helpful.io',
-        'api_version' => 'api',
-        'user_agent' => 'alpaca/0.2.1 (https://github.com/pksunkara/alpaca)'
+        'base'    => 'https://api.shipmile.com',
+        'api_version' => 'v1',
+        'user_agent' => 'shipmile-php/0.1.1'
     );
 
     protected $headers = array();
