@@ -18,7 +18,7 @@ use Shipmile\HttpClient\ResponseHandler;
 class HttpClient
 {
     protected $options = array(
-        'base'    => 'https://api.shipmile.com',
+        'base'    => 'https://test.shipmile.com',
         'api_version' => 'v1',
         'user_agent' => 'shipmile-php/0.1.1'
     );
