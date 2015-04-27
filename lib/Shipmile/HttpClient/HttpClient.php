@@ -18,7 +18,8 @@ use Shipmile\HttpClient\ResponseHandler;
 class HttpClient
 {
     protected $options = array(
-        'base'    => 'https://test.shipmile.com',
+        'base_prod'    => 'https://api.shipmile.com',
+        'base_test'    => 'https://api.shipmile.com',
         'api_version' => 'v1',
         'user_agent' => 'shipmile-php/0.1.1'
     );
@@ -34,6 +35,14 @@ class HttpClient
 
         $this->options = array_merge($this->options, $options);
 
+        if(!array_key_exists('mode', $this->options['mode'])) {
+            $mode = 'prod';
+        } else {
+            $mode = $this->options['mode']
+        }
+
+        $base_url = ($mode == 'prod')? $this->options['base_prod'] : $this->options['base_test'] 
+
         $this->headers = array(
             'user-agent' => $this->options['user_agent'],
         );
@@ -43,7 +52,7 @@ class HttpClient
             unset($this->options['headers']);
         }
 
-        $client = new GuzzleClient($this->options['base'], $this->options);
+        $client = new GuzzleClient($base_url, $this->options);
         $this->client = $client;
 
         $listener = array(new ErrorHandler(), 'onRequestError');
