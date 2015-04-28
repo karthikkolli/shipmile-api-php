@@ -21,6 +21,8 @@ class Orders
 
         $response = $this->client->post($this->endpoint, $body, $options);
 
+        return $response;
+
     }
 
     public function get($order_id, array $options = array())
@@ -28,5 +30,7 @@ class Orders
         $body = (isset($options['query']) ? $options['query'] : array());
         
         $response = $this->client->get($this->endpoint.'/'.rawurlencode($order_id).'', $body, $options);
+
+        return $response;
     }
 } 
