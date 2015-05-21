@@ -34,7 +34,7 @@ class Orders
         return $response;
     }
 
-    public function markReady($order_id, array $options = array())
+    public function markReady(array $options = array())
     {
         $body = (isset($options['body']) ? $options['body'] : array());
 
