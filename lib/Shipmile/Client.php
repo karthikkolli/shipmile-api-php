@@ -20,4 +20,13 @@ class Client
     {
         return new Api\Orders($this->httpClient);
     }
+
+    /**
+     * Labels
+     */
+    public function labels()
+    {
+        return new Api\Labels($this->httpClient);
+    }
+
 }
