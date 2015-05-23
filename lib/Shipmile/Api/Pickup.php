@@ -4,18 +4,18 @@ namespace Shipmile\Api;
 
 use Shipmile\HttpClient\HttpClient;
 
-class Orders
+class Pickup
 {
     private $client;
 
     public function __construct(HttpClient $client)
     {
         $this->client = $client;
-        $this->endpoint = '/orders';
+        $this->endpoint = '/pickup';
     }
 
 
-    public function create(array $options = array())
+    public function mark(array $options = array())
     {
         $body = (isset($options['body']) ? $options['body'] : array());
 
@@ -25,12 +25,4 @@ class Orders
 
     }
 
-    public function get($order_id, array $options = array())
-    {
-        $body = (isset($options['query']) ? $options['query'] : array());
-
-        $response = $this->client->get($this->endpoint.'/'.rawurlencode($order_id).'', $body, $options);
-
-        return $response;
-    }
 }

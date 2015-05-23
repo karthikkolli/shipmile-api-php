@@ -29,4 +29,12 @@ class Client
         return new Api\Labels($this->httpClient);
     }
 
+    /**
+     * Pickups
+     */
+    public function pickup()
+    {
+        return new Api\Pickup($this->httpClient);
+    }
+
 }
