@@ -37,4 +37,13 @@ class Client
         return new Api\Pickup($this->httpClient);
     }
 
+    /**
+     * Availability
+     */
+    public function availability()
+    {
+        return new Api\Availability($this->httpClient);
+    }
+
+
 }
