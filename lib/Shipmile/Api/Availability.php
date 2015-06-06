@@ -19,7 +19,7 @@ class Availability
     {
         $body = (isset($options['query']) ? $options['query'] : array());
 
-        $response = $this->client->post($this->endpoint.'/'.rawurlencode($pincode), $body, $options);
+        $response = $this->client->get($this->endpoint.'/'.rawurlencode($pincode), $body, $options);
 
         return $response;
 
